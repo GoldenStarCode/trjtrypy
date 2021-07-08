@@ -832,8 +832,8 @@ Here we include the link to several famous trajectory data sets:
 
 * Geolife trajectory dataset from Microsoft: https://msropendata.com/datasets/d19b353b-7483-4db7-a828-b130f6d1f035 
 * T-Drive trajectory dataset from Microsoft: https://www.microsoft.com/en-us/research/publication/t-drive-driving-directions-based-on-taxi-trajectories/
-* Car-Bus dataset from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/GPS+Trajectories
-* Character Trajectories dataset from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Character+Trajectories
+* Car-Bus trajectory dataset from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/GPS+Trajectories
+* Character trajectories dataset from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Character+Trajectories
 
 References
 **********
