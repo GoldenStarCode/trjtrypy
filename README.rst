@@ -477,7 +477,7 @@ trjtrypy.visualizations.draw_landmarks_trajectory(landmarks, trajectory, version
 
    >>> tt.visualizations.draw_landmarks_trajectory(landmarks, trajectory, version='unsigned', trj=True, lndmarks=True, dists=True, argminpnts=True, zoom=None, figsize=(5,10))
    
-.. image:: https://github.com/GoldenStarCode/tmg/blob/main/traj2.jpg?raw=true
+.. image:: https://github.com/GoldenStarCode/test/blob/main/images/traj2.jpeg?raw=true
          :width: 600px
          :height: 500px
          
