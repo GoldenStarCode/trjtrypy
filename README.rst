@@ -681,7 +681,7 @@ The minimum distance of all points in a set of points from a curve simultaneousl
 .. code-block:: python
 
    import numpy as np
-   from trjtrypy.distsbase import DistsBase
+   from trjtrypy.basedists import distance
 
 
    # define a set of points
@@ -695,13 +695,13 @@ The minimum distance of all points in a set of points from a curve simultaneousl
    curves=np.array([curve], dtype=object)
 
    # compute unsigned distance 
-   tt.basedists.distance(points, curves) # returns array([[7.07106781e-01, 5.00000000e-01, 7.07106781e-01, 7.07106781e-01,
+   distance(points, curves) # returns array([[7.07106781e-01, 5.00000000e-01, 7.07106781e-01, 7.07106781e-01,
                                          #                 3.53553391e-01, 5.00000000e-01, 5.00000000e-01, 5.00000000e-01,
                                          #                 3.53553391e-01, 3.53553391e-01, 5.00000000e-01, 1.57009246e-16,
                                          #                 7.07106781e-01, 5.00000000e-01, 5.00000000e-01, 7.07106781e-01]])
 
    # compute signed distance 
-   tt.basedists.distance(points, curves, version='signed') # returns array([[-7.07106781e-01,  0.00000000e+00,  7.07106781e-01,
+   distance(points, curves, version='signed') # returns array([[-7.07106781e-01,  0.00000000e+00,  7.07106781e-01,
                                                            #                 -7.07106781e-01,  3.53553391e-01,  5.00000000e-01,
                                                            #                 -5.00000000e-01, -5.00000000e-01, -3.53553391e-01,
                                                            #                 -3.53553391e-01,  5.00000000e-01, -1.57009246e-16,
@@ -713,7 +713,7 @@ The minimum distance of all points in a set of points from curves simultaneously
 .. code-block:: python
 
    import numpy as np
-   from trjtrypy.distsbase import DistsBase
+   from trjtrypy.basedists import distance
 
 
    # define a set of points
@@ -728,7 +728,7 @@ The minimum distance of all points in a set of points from curves simultaneously
    curves=np.array([curve1, curve2], dtype=object)
 
    # compute unsigned distance 
-   tt.basedists.distance(points, curves) # returns array([[7.07106781e-01, 5.00000000e-01, 7.07106781e-01, 7.07106781e-01,
+   distance(points, curves) # returns array([[7.07106781e-01, 5.00000000e-01, 7.07106781e-01, 7.07106781e-01,
                                          #                  3.53553391e-01, 5.00000000e-01, 5.00000000e-01, 5.00000000e-01,
                                          #                  3.53553391e-01, 3.53553391e-01, 5.00000000e-01, 1.57009246e-16,
                                          #                  7.07106781e-01, 5.00000000e-01, 5.00000000e-01, 7.07106781e-01],
@@ -738,7 +738,7 @@ The minimum distance of all points in a set of points from curves simultaneously
                                          #                  2.12132034e+00, 1.06066017e+00, 1.06066017e+00, 7.07106781e-01]])
    
    # compute signed distance 
-   tt.basedists.distance(points, curves, version='signed') # returns array([[-7.07106781e-01,  0.00000000e+00,  7.07106781e-01,
+   distance(points, curves, version='signed') # returns array([[-7.07106781e-01,  0.00000000e+00,  7.07106781e-01,
                                                            #                  -7.07106781e-01,  3.53553391e-01,  5.00000000e-01,
                                                            #                  -5.00000000e-01, -5.00000000e-01, -3.53553391e-01,
                                                            #                  -3.53553391e-01,  5.00000000e-01, -1.57009246e-16,
@@ -758,7 +758,7 @@ The minimum distance of a point from a line segment:
 .. code-block:: python
 
    import numpy as np
-   from trjtrypy.distsbase import DistsBase
+   from trjtrypy.basedists import distance
 
 
    # define a point
@@ -771,10 +771,10 @@ The minimum distance of a point from a line segment:
    curves = np.array([linesegment], dtype=object)
 
    # compute unsigned distance 
-   tt.basedists.distance(points, curves) # array([[1.58113883]])
+   distance(points, curves) # array([[1.58113883]])
 
    # compute signed distance 
-   tt.basedists.distance(points, curves) # array([[1.58113883]])
+   distance(points, curves) # array([[1.58113883]])
    
 
 
@@ -783,7 +783,7 @@ The minimum distance of a set of points from a line segment:
 .. code-block:: python
 
    import numpy as np
-   from trjtrypy.distsbase import DistsBase
+   from trjtrypy.basedists import distance
 
 
 
@@ -798,12 +798,12 @@ The minimum distance of a set of points from a line segment:
 
  
    # compute unsigned distance 
-   tt.basedists.distance(points, curves) # array([[4.30116263, 4.60977223, 4.94974747, 3.16227766, 3.20156212,
+   distance(points, curves) # array([[4.30116263, 4.60977223, 4.94974747, 3.16227766, 3.20156212,
                                          #         4.24264069, 1.58113883, 2.12132034, 2.47487373, 2.47487373,
                                          #         0.70710678, 2.12132034, 0.70710678, 0.5       , 0.5       ,
                                          #         0.70710678]])
    # compute signed distance 
-   tt.basedists.distance(points, curves) # array([[ 4.30116263,  4.60977223,  4.94974747,  3.16227766,  3.20156212,
+   distance(points, curves) # array([[ 4.30116263,  4.60977223,  4.94974747,  3.16227766,  3.20156212,
                                          #          4.24264069,  1.58113883,  2.12132034,  2.47487373,  2.47487373,
                                          #          0.70710678,  2.12132034, -0.70710678,  0.5       , -0.5       ,
                                          #          0.        ]])
@@ -825,6 +825,22 @@ One can approximate any continuous curve via trajectories with a sufficient accu
 =================================================
 By connecting consecutive points in a 2d times series one can make a trajectory in order 
 to use this package functionalities.
+
+3. Application in Machine Learning
+===================================
+* One of the biggest advantages of this package is enabling machine learning algorithms on trajectory datasets. In fact, using curve2vec featurization one can convert each trajectory to a vector and thus apply any machine learning algorithm. For instance, one can do classification tasks using machine learning or deep learning classifiers such as Support Vector Machine, Decision Tree, Random Forest, Neural Networks, etc. as it is done in the references [1]_, [2]_.
+
+* It is needless to say that using d_Q or d_Q_pi distances as similarity measures one may do Clustering or apply KNN (K-Nearest Neighborhood).
+
+Data sets
+*********
+
+Here we include the link to several famous trajectory data sets:
+
+* Geolife trajectory dataset from Microsoft: https://msropendata.com/datasets/d19b353b-7483-4db7-a828-b130f6d1f035 
+* T-Drive trajectory dataset from Microsoft: https://www.microsoft.com/en-us/research/publication/t-drive-driving-directions-based-on-taxi-trajectories/
+* Car-Bus dataset from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/GPS+Trajectories
+* Character Trajectories dataset from UCI Machine Learning Repository: https://archive.ics.uci.edu/ml/datasets/Character+Trajectories
 
 References
 **********
