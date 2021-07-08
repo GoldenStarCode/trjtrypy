@@ -150,7 +150,7 @@ First of all make sure that you have already installed Python from https://www.p
 
 .. code-block::
 
-   $ git clone ....
+   $ git clone https://github.com/GoldenStarCode/trjtrypy.git
    $ cd trjtrpy
    $ python setup.py install
 
@@ -262,27 +262,20 @@ Also, setting ``argPnts=True`` will return argmin points selected by landmarks:
 
    >>> argminfms = tt.featureMappings.curve2vec(landmarks, trajectories, argPnts=True)
    >>> argminfms # See figure 1 and figure 2 
-   array([{'UnsignedCurve2Vec': array([2.12132034, 1.41421356, 1.41421356]), 'ArgminPoints': array([[0.5, 0.5],
-       [2. , 2. ],
-       [1. , 1. ]])},
-       {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01],
-       [ 1.00000000e+00,  1.00000000e+00],
-       [ 2.00000000e+00, -2.22044605e-16]])}], dtype=object)
+   array([{'UnsignedCurve2Vec': array([2.12132034, 1.41421356, 1.41421356]), 
+           'ArgminPoints': array([[0.5, 0.5], [2. , 2. ], [1. , 1. ]])},
+       {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 
+       'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01], [ 1.00000000e+00,  1.00000000e+00], [ 2.00000000e+00, -2.22044605e-16]])}], dtype=object)
    >>> argminfms[0] # See figure 1
-   {'ArgminPoints': array([[0.5, 0.5],
-        [2. , 2. ],
-        [1. , 1. ]]),
+   {'ArgminPoints': array([[0.5, 0.5], [2. , 2. ], [1. , 1. ]]),
    'UnsignedCurve2Vec': array([2.12132034, 1.41421356, 1.41421356])}
    >>> argminfms[0]['ArgminPoints'] # Output determines which points of trajectory1 are selected by the landmarks. As an example, first landmark selects the point [0.5, 0.5] on trajectory1.
-   array([[0.5, 0.5],
-       [2. , 2. ],
-       [1. , 1. ]])
+   array([[0.5, 0.5], [2. , 2. ], [1. , 1. ]])
    >>> argminfms[0]['UnsignedCurve2Vec']  # Output determines landmarks unsigned distances from trajectory1. As an example, first landmark unsigned distance from trajectory1 is 2.12132034.
    array([2.12132034, 1.41421356, 1.41421356])
    >>> argminfms[1]
-   {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01],
-       [ 1.00000000e+00,  1.00000000e+00],
-       [ 2.00000000e+00, -2.22044605e-16]])}
+   {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 
+   'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01], [ 1.00000000e+00,  1.00000000e+00], [ 2.00000000e+00, -2.22044605e-16]])}
 
 Figure 1:
    .. image:: https://github.com/GoldenStarCode/tmg/blob/main/detailtraj1.jpg?raw=true
@@ -298,19 +291,19 @@ A combination of above functionalities can also be used:
 .. code-block:: python
 
    >>> tt.featureMappings.curve2vec(landmarks, trajectories, segIndx=True, argPnts=True)
-   array([{'UnsignedCurve2Vec': array([2.12132034, 1.41421356, 1.41421356]), 'SelectedSegmentsIndex': array([0, 0, 0], dtype=int64), 'ArgminPoints': array([[0.5, 0.5],
-       [2. , 2. ],
-       [1. , 1. ]])},
-       {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 'SelectedSegmentsIndex': array([12,  5, 12], dtype=int64), 'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01],
-       [ 1.00000000e+00,  1.00000000e+00],
-       [ 2.00000000e+00, -2.22044605e-16]])}], dtype=object)
+   array([{'UnsignedCurve2Vec': array([2.12132034, 1.41421356, 1.41421356]), 
+           'SelectedSegmentsIndex': array([0, 0, 0], dtype=int64), 
+           'ArgminPoints': array([[0.5, 0.5], [2. , 2. ], [1. , 1. ]])},
+       {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 
+        'SelectedSegmentsIndex': array([12,  5, 12], dtype=int64), 
+        'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01], [ 1.00000000e+00,  1.00000000e+00], [ 2.00000000e+00, -2.22044605e-16]])}], dtype=object)
    >>> tt.featureMappings.curve2vec(landmarks, trajectories, version='signed', sigma=0.9, segIndx=True, argPnts=True)
-   array([{'SignedCurve2Vec': array([-0.00911206,  0.1330272 , -0.1330272 ]), 'SelectedSegmentsIndex': array([0, 0, 0], dtype=int64), 'ArgminPoints': array([[0.5, 0.5],
-       [2. , 2. ],
-       [1. , 1. ]])},
-       {'SignedCurve2Vec': array([-4.23798562e-01,  1.61426291e-04, -3.48909435e-16]), 'SelectedSegmentsIndex': array([12,  5, 12], dtype=int64), 'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01],
-       [ 1.00000000e+00,  1.00000000e+00],
-       [ 2.00000000e+00, -2.22044605e-16]])}], dtype=object)
+   array([{'SignedCurve2Vec': array([-0.00911206,  0.1330272 , -0.1330272 ]), 
+           'SelectedSegmentsIndex': array([0, 0, 0], dtype=int64), 
+           'ArgminPoints': array([[0.5, 0.5], [2. , 2. ], [1. , 1. ]])},
+       {'SignedCurve2Vec': array([-4.23798562e-01,  1.61426291e-04, -3.48909435e-16]), 
+        'SelectedSegmentsIndex': array([12,  5, 12], dtype=int64), 
+        'ArgminPoints': array([[ 1.50000000e+00, -5.00000000e-01], [ 1.00000000e+00,  1.00000000e+00], [ 2.00000000e+00, -2.22044605e-16]])}], dtype=object)
 
 trjtrypy.distances.d_Q
 ==========================
@@ -696,17 +689,17 @@ The minimum distance of all points in a set of points from a curve simultaneousl
 
    # compute unsigned distance 
    distance(points, curves) # returns array([[7.07106781e-01, 5.00000000e-01, 7.07106781e-01, 7.07106781e-01,
-                                         #                 3.53553391e-01, 5.00000000e-01, 5.00000000e-01, 5.00000000e-01,
-                                         #                 3.53553391e-01, 3.53553391e-01, 5.00000000e-01, 1.57009246e-16,
-                                         #                 7.07106781e-01, 5.00000000e-01, 5.00000000e-01, 7.07106781e-01]])
+                            #                 3.53553391e-01, 5.00000000e-01, 5.00000000e-01, 5.00000000e-01,
+                            #                 3.53553391e-01, 3.53553391e-01, 5.00000000e-01, 1.57009246e-16,
+                            #                 7.07106781e-01, 5.00000000e-01, 5.00000000e-01, 7.07106781e-01]])
 
    # compute signed distance 
    distance(points, curves, version='signed') # returns array([[-7.07106781e-01,  0.00000000e+00,  7.07106781e-01,
-                                                           #                 -7.07106781e-01,  3.53553391e-01,  5.00000000e-01,
-                                                           #                 -5.00000000e-01, -5.00000000e-01, -3.53553391e-01,
-                                                           #                 -3.53553391e-01,  5.00000000e-01, -1.57009246e-16,
-                                                           #                 -7.07106781e-01,  5.00000000e-01, -5.00000000e-01,
-                                                           #                  0.00000000e+00]])
+                                              #                 -7.07106781e-01,  3.53553391e-01,  5.00000000e-01,
+                                              #                 -5.00000000e-01, -5.00000000e-01, -3.53553391e-01,
+                                              #                 -3.53553391e-01,  5.00000000e-01, -1.57009246e-16,
+                                              #                 -7.07106781e-01,  5.00000000e-01, -5.00000000e-01,
+                                              #                  0.00000000e+00]])
 
 The minimum distance of all points in a set of points from curves simultaneously:
 
@@ -729,27 +722,27 @@ The minimum distance of all points in a set of points from curves simultaneously
 
    # compute unsigned distance 
    distance(points, curves) # returns array([[7.07106781e-01, 5.00000000e-01, 7.07106781e-01, 7.07106781e-01,
-                                         #                  3.53553391e-01, 5.00000000e-01, 5.00000000e-01, 5.00000000e-01,
-                                         #                  3.53553391e-01, 3.53553391e-01, 5.00000000e-01, 1.57009246e-16,
-                                         #                  7.07106781e-01, 5.00000000e-01, 5.00000000e-01, 7.07106781e-01],
-                                         #                 [2.91547595e+00, 3.20156212e+00, 3.53553391e+00, 2.00000000e+00,
-                                         #                  1.80277564e+00, 2.82842712e+00, 7.07106781e-01, 7.07106781e-01,
-                                         #                  1.06066017e+00, 1.06066017e+00, 7.07106781e-01, 7.07106781e-01,
-                                         #                  2.12132034e+00, 1.06066017e+00, 1.06066017e+00, 7.07106781e-01]])
+                            #                 3.53553391e-01, 5.00000000e-01, 5.00000000e-01, 5.00000000e-01,
+                            #                 3.53553391e-01, 3.53553391e-01, 5.00000000e-01, 1.57009246e-16,
+                            #                 7.07106781e-01, 5.00000000e-01, 5.00000000e-01, 7.07106781e-01],
+                            #                [2.91547595e+00, 3.20156212e+00, 3.53553391e+00, 2.00000000e+00,
+                            #                 1.80277564e+00, 2.82842712e+00, 7.07106781e-01, 7.07106781e-01,
+                            #                 1.06066017e+00, 1.06066017e+00, 7.07106781e-01, 7.07106781e-01,
+                            #                 2.12132034e+00, 1.06066017e+00, 1.06066017e+00, 7.07106781e-01]])
    
    # compute signed distance 
    distance(points, curves, version='signed') # returns array([[-7.07106781e-01,  0.00000000e+00,  7.07106781e-01,
-                                                           #                  -7.07106781e-01,  3.53553391e-01,  5.00000000e-01,
-                                                           #                  -5.00000000e-01, -5.00000000e-01, -3.53553391e-01,
-                                                           #                  -3.53553391e-01,  5.00000000e-01, -1.57009246e-16,
-                                                           #                  -7.07106781e-01,  5.00000000e-01, -5.00000000e-01,
-                                                           #                  0.00000000e+00],
-                                                           #                [ 2.91547595e+00,  3.20156212e+00,  3.53553391e+00,
-                                                           #                  2.00000000e+00,  1.80277564e+00,  2.82842712e+00,
-                                                           #                  0.00000000e+00,  7.07106781e-01,  1.06066017e+00,
-                                                           #                  1.06066017e+00, -7.07106781e-01,  7.07106781e-01,
-                                                           #                  -2.12132034e+00, -1.06066017e+00, -1.06066017e+00,
-                                                           #                  -7.07106781e-01]])
+                                              #                 -7.07106781e-01,  3.53553391e-01,  5.00000000e-01,
+                                              #                 -5.00000000e-01, -5.00000000e-01, -3.53553391e-01,
+                                              #                 -3.53553391e-01,  5.00000000e-01, -1.57009246e-16,
+                                              #                 -7.07106781e-01,  5.00000000e-01, -5.00000000e-01,
+                                              #                  0.00000000e+00],
+                                              #                [ 2.91547595e+00,  3.20156212e+00,  3.53553391e+00,
+                                              #                  2.00000000e+00,  1.80277564e+00,  2.82842712e+00,
+                                              #                  0.00000000e+00,  7.07106781e-01,  1.06066017e+00,
+                                              #                  1.06066017e+00, -7.07106781e-01,  7.07106781e-01,
+                                              #                  -2.12132034e+00, -1.06066017e+00, -1.06066017e+00,
+                                              #                  -7.07106781e-01]])
 
 .. [iii] The minimum distance of a point/set of points from a line segment:
 
@@ -799,14 +792,14 @@ The minimum distance of a set of points from a line segment:
  
    # compute unsigned distance 
    distance(points, curves) # array([[4.30116263, 4.60977223, 4.94974747, 3.16227766, 3.20156212,
-                                         #         4.24264069, 1.58113883, 2.12132034, 2.47487373, 2.47487373,
-                                         #         0.70710678, 2.12132034, 0.70710678, 0.5       , 0.5       ,
-                                         #         0.70710678]])
+                            #         4.24264069, 1.58113883, 2.12132034, 2.47487373, 2.47487373,
+                            #         0.70710678, 2.12132034, 0.70710678, 0.5       , 0.5       ,
+                            #         0.70710678]])
    # compute signed distance 
    distance(points, curves) # array([[ 4.30116263,  4.60977223,  4.94974747,  3.16227766,  3.20156212,
-                                         #          4.24264069,  1.58113883,  2.12132034,  2.47487373,  2.47487373,
-                                         #          0.70710678,  2.12132034, -0.70710678,  0.5       , -0.5       ,
-                                         #          0.        ]])
+                            #          4.24264069,  1.58113883,  2.12132034,  2.47487373,  2.47487373,
+                            #          0.70710678,  2.12132034, -0.70710678,  0.5       , -0.5       ,
+                            #          0.        ]])
 
 
 
