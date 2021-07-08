@@ -1,0 +1,17 @@
+# Distribution / packaging
+dist/
+*.egg-info/
+Initial Files/
+
+
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Sphinix
+readme/
+
+# Coverage files
+.coverage
+htmlcov/
+coverage.xml
