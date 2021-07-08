@@ -87,7 +87,7 @@ Usage: See [i]_.
 
 Example: 
 
-.. image:: https://github.com/GoldenStarCode/tmg/blob/main/points_curve.jpeg?raw=true
+.. image:: 
 
 Note: The figure is drawn by *draw_landmarks_trajectory* function of this package.
 
@@ -101,7 +101,7 @@ Usage: See [ii]_.
 
 Example: 
 
-.. image:: https://github.com/GoldenStarCode/test/blob/main/images/points_curve.jpeg?raw=true
+.. image:: https://github.com/GoldenStarCode/tmg/blob/main/points_curve.jpeg?raw=true
 
 Note: The figure is drawn by *draw_landmarks_trajectory* function of this package.
 
