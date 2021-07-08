@@ -547,7 +547,7 @@ Color-coding of the unsigned version of the feature mapping:
    # vectorize above function with numpy vectorize function
    fmfunc=np.vectorize(fmfunc)
    # color-code
-   colorcoding(fmfunc, trajectory, figsize=(10,7), zoom=.4) # figure 3
+   tt.visualizations.colorcoding(fmfunc, trajectory, figsize=(10,7), zoom=.4) # figure 3
 
 Figure 3:
 
@@ -568,7 +568,7 @@ Color-coding of the signed version of the feature mapping:
    # vectorize above function with numpy vectorize function
    fmfunc=np.vectorize(fmfunc)
    # color-code
-   colorcoding(fmfunc, trajectory, version='signed', figsize=(10,7), zoom=.4) # figure 4
+   tt.visualizations.colorcoding(fmfunc, trajectory, version='signed', figsize=(10,7), zoom=.4) # figure 4
 
 Figure 4:
 
