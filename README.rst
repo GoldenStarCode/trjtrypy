@@ -489,7 +489,7 @@ In signed version the trajectory will be drawn in a directed form. As mentioned 
 
    >>>  tt.visualizations.draw_landmarks_trajectory(landmarks,trajectory,version='signed',trj=True,lndmarks=True,dists=True,argminpnts=True,zoom=None,figsize=(10,10))
    
-.. image:: https://github.com/GoldenStarCode/tmg/blob/main/traj2direct.jpg?raw=true
+.. image:: https://github.com/GoldenStarCode/test/blob/main/images/traj2direct.jpg?raw=true
    :width: 600px
    :height: 500px    
 
