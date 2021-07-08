@@ -3,6 +3,7 @@
 ============
 
 |pypi| |build| |MIT| |coverage|
+|quality|
 
 .. |pypi| image:: https://badge.fury.io/py/trjtrypy.svg
     :target: https://badge.fury.io/py/trjtrypy
@@ -17,6 +18,8 @@
 .. |coverage| image:: https://codecov.io/gh/GoldenStarCode/trjtrypy/branch/main/graph/badge.svg?token=LEKRIOIVOL
       :target: https://codecov.io/gh/GoldenStarCode/trjtrypy
     
+.. |quality| image:: https://img.shields.io/lgtm/grade/python/github/GoldenStarCode/trjtrypy?logo=lgtm   
+
 
 .. contents:: Table of Contents
    :depth: 7
