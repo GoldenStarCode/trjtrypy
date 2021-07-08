@@ -241,7 +241,7 @@ In both signed and unsigned versions setting ``segIndx=True`` will return an arr
 
 .. code-block:: python
 
-   >>> segindxfms = tt.featureMapping.curve2vec(landmarks, trajectories, segIndx=True)
+   >>> segindxfms = tt.featureMappings.curve2vec(landmarks, trajectories, segIndx=True)
    >>> segindxfms # See figure 1 and figure 2 
    array([{'UnsignedCurve2Vec': array([2.12132034, 1.41421356, 1.41421356]), 'SelectedSegmentsIndex': array([0, 0, 0], dtype=int64)},
        {'UnsignedCurve2Vec': array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16]), 'SelectedSegmentsIndex': array([12,  5, 12], dtype=int64)}],
