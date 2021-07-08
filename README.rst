@@ -219,9 +219,9 @@ Default (unsigned feature mapping):
    >>> fms # An array containing unsigned feature mapping of trajectories
    array([[2.12132034e+00, 1.41421356e+00, 1.41421356e+00],
          [7.07106781e-01, 2.82842712e+00, 3.14018492e-16]])
-   >>> fm[0] # Vectorized form of trajectory1 under curve2vec feature mapping
+   >>> fms[0] # Vectorized form of trajectory1 under curve2vec feature mapping
    array([2.12132034e+00, 1.41421356e+00, 1.41421356e+00])
-   >>> fm[1] # Vectorized form of trajectory2 under curve2vec feature mapping
+   >>> fms[1] # Vectorized form of trajectory2 under curve2vec feature mapping
    array([7.07106781e-01, 2.82842712e+00, 3.14018492e-16])
 
 When ``version='signed'`` and sigma is given:
@@ -232,9 +232,9 @@ When ``version='signed'`` and sigma is given:
    >>> signfms # An array containing signed feature mapping of trajectories
    array([[-3.44345942e-01,  4.28881942e-01, -4.28881942e-01],
        [-3.12009772e-01,  1.91392993e-01, -1.57009246e-16]])
-   >>> signfm[0] # Vectorized form of trajectory1 under curve2vec feature mapping
+   >>> signfms[0] # Vectorized form of trajectory1 under curve2vec feature mapping
    array([-3.44345942e-01,  4.28881942e-01, -4.28881942e-01])
-   >>> signfm[1] # Vectorized form of trajectory2 under curve2vec feature mapping
+   >>> signfms[1] # Vectorized form of trajectory2 under curve2vec feature mapping
    array([-3.12009772e-01,  1.91392993e-01, -1.57009246e-16])
 
 In both signed and unsigned versions setting ``segIndx=True`` will return an array of dictionaries: 
